@@ -4,7 +4,29 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2026-02-24)
+## Unreleased (2026-03-07)
+
+<section class="features">
+
+### Features
+
+-   [`abe64bf`](https://github.com/stdlib-js/stdlib/commit/abe64bfa1e6f04fa49979532f45f38c64a2239ff) - add C implementation for `lognormal/quantile` [(#10148)](https://github.com/stdlib-js/stdlib/pull/10148)
+
+</section>
+
+<!-- /.features -->
+
+<section class="issues">
+
+### Closed Issues
+
+This release closes the following issue:
+
+[#3756](https://github.com/stdlib-js/stdlib/issues/3756)
+
+</section>
+
+<!-- /.issues -->
 
 <section class="commits">
 
@@ -12,6 +34,7 @@
 
 <details>
 
+-   [`abe64bf`](https://github.com/stdlib-js/stdlib/commit/abe64bfa1e6f04fa49979532f45f38c64a2239ff) - **feat:** add C implementation for `lognormal/quantile` [(#10148)](https://github.com/stdlib-js/stdlib/pull/10148) _(by Siddhartha Mondal, Philipp Burckhardt)_
 -   [`797d3a0`](https://github.com/stdlib-js/stdlib/commit/797d3a0bbe3f062d53e7ff8b7919e54a0e6c0d00) - **bench:** refactor to use string interpolation in `stats/base/dists/lognormal` [(#10445)](https://github.com/stdlib-js/stdlib/pull/10445) _(by Vishal Gaikwad)_
 
 </details>
@@ -24,8 +47,10 @@
 
 ### Contributors
 
-A total of 1 person contributed to this release. Thank you to this contributor:
+A total of 3 people contributed to this release. Thank you to the following contributors:
 
+-   Philipp Burckhardt
+-   Siddhartha Mondal
 -   Vishal Gaikwad
 
 </section>

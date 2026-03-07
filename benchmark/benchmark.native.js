@@ -1,7 +1,7 @@
 /**
 * @license Apache-2.0
 *
-* Copyright (c) 2018 The Stdlib Authors.
+* Copyright (c) 2026 The Stdlib Authors.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -20,18 +20,27 @@
 
 // MODULES //
 
+var resolve = require( 'path' ).resolve;
 var bench = require( '@stdlib/bench-harness' );
-var uniform = require( '@stdlib/random-array-uniform' );
+var tryRequire = require( '@stdlib/utils-try-require' );
 var isnan = require( '@stdlib/math-base-assert-is-nan' );
 var EPS = require( '@stdlib/constants-float64-eps' );
+var uniform = require( '@stdlib/random-array-uniform' );
 var format = require( '@stdlib/string-format' );
 var pkg = require( './../package.json' ).name;
-var quantile = require( './../lib' );
+
+
+// VARIABLES //
+
+var quantile = tryRequire( resolve( __dirname, './../lib/native.js' ) );
+var opts = {
+	'skip': ( quantile instanceof Error )
+};
 
 
 // MAIN //
 
-bench( pkg, function benchmark( b ) {
+bench( format( '%s::native', pkg ), opts, function benchmark( b ) {
 	var sigma;
 	var opts;
 	var mu;
@@ -50,39 +59,6 @@ bench( pkg, function benchmark( b ) {
 	for ( i = 0; i < b.iterations; i++ ) {
 		// eslint-disable-next-line max-len
 		y = quantile( p[ i % p.length ], mu[ i % mu.length ], sigma[ i % sigma.length ] );
-		if ( isnan( y ) ) {
-			b.fail( 'should not return NaN' );
-		}
-	}
-	b.toc();
-	if ( isnan( y ) ) {
-		b.fail( 'should not return NaN' );
-	}
-	b.pass( 'benchmark finished' );
-	b.end();
-});
-
-bench( format( '%s:factory', pkg ), function benchmark( b ) {
-	var myquantile;
-	var sigma;
-	var opts;
-	var mu;
-	var p;
-	var y;
-	var i;
-
-	mu = 10.0;
-	sigma = 4.0;
-	myquantile = quantile.factory( mu, sigma );
-
-	opts = {
-		'dtype': 'float64'
-	};
-	p = uniform( 100, 0.0, 1.0, opts );
-
-	b.tic();
-	for ( i = 0; i < b.iterations; i++ ) {
-		y = myquantile( p[ i % p.length ] );
 		if ( isnan( y ) ) {
 			b.fail( 'should not return NaN' );
 		}
