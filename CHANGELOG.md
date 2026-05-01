@@ -34,6 +34,7 @@ This release closes the following issue:
 
 <details>
 
+-   [`cd99d80`](https://github.com/stdlib-js/stdlib/commit/cd99d8072389d37a05848951926c3fe51da19832) - **docs:** propagate fixes to sibling packages [(#11843)](https://github.com/stdlib-js/stdlib/pull/11843) _(by Philipp Burckhardt)_
 -   [`c07de96`](https://github.com/stdlib-js/stdlib/commit/c07de963b0116d680060bb12d271fd8bf0bb26c1) - **chore:** minor clean-up _(by Philipp Burckhardt)_
 -   [`abe64bf`](https://github.com/stdlib-js/stdlib/commit/abe64bfa1e6f04fa49979532f45f38c64a2239ff) - **feat:** add C implementation for `lognormal/quantile` [(#10148)](https://github.com/stdlib-js/stdlib/pull/10148) _(by Siddhartha Mondal, Philipp Burckhardt)_
 -   [`797d3a0`](https://github.com/stdlib-js/stdlib/commit/797d3a0bbe3f062d53e7ff8b7919e54a0e6c0d00) - **bench:** refactor to use string interpolation in `stats/base/dists/lognormal` [(#10445)](https://github.com/stdlib-js/stdlib/pull/10445) _(by Vishal Gaikwad)_
